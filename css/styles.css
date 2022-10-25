@@ -14,6 +14,9 @@
   --active-btn-color: #188ce8;
   --filter-btn-color: #f5f4fa;
 }
+h1,h2,h3,h4,h5,h6,p{
+  margin:0
+}
 /* застосуавння загальних стилів для сторінки    */
 body {
   color: var(--primary-text-color);
