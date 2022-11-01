@@ -13,11 +13,20 @@
   --order-btn-color: var(--accent-color);
   --active-btn-color: #188ce8;
   --filter-btn-color: #f5f4fa;
+  --header-underline-color: #ececec;
+  --card-border-color: #eee;
 }
-h1,h2,h3,h4,h5,h6,p{
-  margin:0
+/* Скидання стилів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
-img{
+img {
   display: block;
 }
 /* застосуавння загальних стилів для сторінки    */
@@ -38,7 +47,51 @@ body {
   text-decoration: none;
   color: inherit;
 }
+/* html{
+  box-sizing: border-box;
+} */
+/* 
+
+*,
+*::before,
+::after{
+  box-sizing: inherit;
+} */
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/* header  */
+.page-header {
+  border-bottom: 1px solid var(--header-underline-color);
+}
+.page-header .container {
+  display: flex;
+  align-items: center;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.site-nav {
+  display: flex;
+  margin-left: 93px;
+  /* gap: 50px; */
+}
+.contact.list .item:not(:last-child),
+.site-nav.list .item:not(:last-child) {
+  margin-right: 50px;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.work {
+  padding-bottom: 94px;
+}
 /* стилі логотипу компанії */
+
 .logo {
   color: var(--accent-color);
   font-family: "Raleway", sans-serif;
@@ -46,6 +99,7 @@ body {
   font-size: 26px;
   line-height: calc(31 / 26);
   text-transform: capitalize;
+  text-align: center;
 }
 /* лого в хедері */
 .logo-dark {
@@ -66,6 +120,17 @@ body {
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+/* .navigation .link,*/
+.page-header .link {
+  display: inline-block;
+}
+.contact.list {
+  display: flex;
+  margin-left: auto;
+  /* gap: 50px; */
 }
 .site-nav .link {
   color: var(--secondary-text-color);
@@ -76,43 +141,61 @@ body {
 .page-bottom {
   background-color: var(--second-bg-color);
 }
+/* секція герой */
+.hero {
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
 /* заголовок секції героя */
 .hero-title {
   color: var(--hero-text-color);
   font-weight: 900;
   font-size: 44px;
   line-height: calc(60 / 44);
-  text-align: center;
+  /* text-align: center; */
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  max-width: 696px;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* кнопка секції героя */
 .hero-btn {
   color: var(--hero-text-color);
   background-color: var(--order-btn-color);
+  border-color: transparent;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.06em;
   line-height: calc(30 / 16);
   cursor: pointer;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 32px;
+  margin-top: 30px;
 }
-/* .hero-btn::first-letter {
-  text-transform: capitalize;
-} */
+
 /* активний стан для кнопки */
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--active-btn-color);
 }
 /* заголовок секції особливості */
+.features .list {
+  display: flex;
+  gap: 30px;
+}
+.features .list-item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+}
 .item-title {
   color: var(--secondary-text-color);
 }
-/* .item-title::first-letter,
-.item-title::first-letter {
-  text-transform: capitalize;
-} */
+
 .features .item-title {
   font-weight: 700;
   font-size: 14px;
@@ -123,6 +206,7 @@ body {
 .features .item-text {
   font-size: 14px;
   line-height: calc(24 / 14);
+  margin-top: 10px;
 }
 .section-title {
   color: var(--secondary-text-color);
@@ -145,17 +229,42 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
+/* Секція Робота або спектр послуг*/
+.work .list {
+  display: flex;
+  margin-top: 50px;
+  gap: 30px;
+}
+.work .list .item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+}
 /* секція команда */
 /* фон секції */
 .team {
   background-color: var(--team-bg-color);
 }
-/* фон картки члена команди */
+.team .container .list {
+  display: flex;
+  margin-top: 50px;
+  gap: 30px;
+}
+/* картка члена команди */
 .member-card {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+  text-align: center;
+
   background-color: var(--main-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 /* заголовок картки та її текст*/
+.member-card .text-content {
+  padding: 30px 0;
+}
+.card-text {
+  margin-top: 10px;
+}
 .card-title {
   color: var(--secondary-text-color);
   font-weight: 500;
@@ -166,7 +275,9 @@ body {
   line-height: calc(19 / 16);
 }
 /* футер */
-
+.page-bottom {
+  padding: 60px 0;
+}
 /* лого в футері , та адресса*/
 .logo-light,
 .direction {
@@ -174,12 +285,16 @@ body {
 }
 /* шрифт в контейнері адресси*/
 .superscription {
+  margin-top: 20px;
+
   font-style: normal;
   font-size: 14px;
   line-height: calc(24 / 14);
 }
 /* пошта й номер */
 .page-bottom .contact {
+  display: block;
+  margin-top: 9px;
   color: var(--glassy-white-text);
 }
 .direction:hover,
@@ -191,6 +306,11 @@ body {
 /* --------------------------------- */
 /* портфоліо */
 /* кнопки фільтрів */
+.filters.list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
 .portfolio .btn {
   background-color: var(--filter-btn-color);
   color: var(--secondary-text-color);
@@ -199,18 +319,30 @@ body {
   font-size: 16px;
   line-height: calc(26 / 16);
   border-color: transparent;
+  border-radius: 4px;
   /* text-transform: capitalize; */
   cursor: pointer;
+  padding: 6px 22px;
 }
 /*кнопки фільтрів при наведенні та фокусі*/
 .portfolio .btn:hover,
 .portfolio .btn:focus {
   background-color: var(--accent-color);
   color: var(--light-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 /* картки портфоліо */
+.cards.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
 /* фон картки */
 .portfolio .list-item {
+  flex-basis: calc((100%- 2 * 30px) / 3);
   background-color: var(--main-bg-color);
 }
 /* заголовок картки портфоліо */
@@ -224,4 +356,8 @@ body {
 .portfolio .card-text {
   font-size: 16px;
   line-height: calc(30 / 16);
+}
+.cards .text-content {
+  padding: 20px 24px;
+  border: 1px solid var(--card-border-color);
 }
